@@ -41,6 +41,23 @@ android {
     }
   }
 
+  sourceSets {
+    main {
+      java.srcDirs("src/main/java")
+      res.srcDirs("src/main/res")
+      manifest.srcFile("src/main/AndroidManifest.xml")
+      assets.srcDirs("src/main/assets")
+    }
+
+    arch_arm32 {
+      asset.srcDirs("arch_arm32/assets")
+    }
+    
+    arch_arm64 {
+      asset.srcDirs("arch_arm64/assets")
+    }
+  }
+
   buildFeatures {
     viewBinding = true
     buildConfig = true
