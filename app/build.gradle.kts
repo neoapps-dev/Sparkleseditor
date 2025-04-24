@@ -5,6 +5,7 @@ plugins {
   id("kotlin-android")
   id("com.mikepenz.aboutlibraries.plugin")
 }
+
 android {
   namespace = "com.sparkleside"
   compileSdk = 34
@@ -17,7 +18,7 @@ android {
     versionName = "1.0"
 
     vectorDrawables.useSupportLibrary = true
-    resConfigs("bn-rBD", "de","ar-rTN", "es-rES", "fr-rTN", "in-rID", "pt-rBR", "pt-rPT", "zh-rCN")
+    resConfigs("bn-rBD", "de", "ar-rTN", "es-rES", "fr-rTN", "in-rID", "pt-rBR", "pt-rPT", "zh-rCN")
   }
 
   compileOptions {
@@ -42,16 +43,6 @@ android {
 
   buildFeatures {
     viewBinding = true
-    buildConfig= true
-  }
-
-  sourceSets {
-    val arch_arm64 by creating {
-      assets.srcDirs("arch_arm64/assets")
-    }
-    val arch_arm32 by creating {
-      assets.srcDirs("arch_arm32/assets")
-    }
   }
 
   splits {
@@ -65,13 +56,13 @@ android {
 
   signingConfigs {
     create("release") {
-      storeFile = file(layout.buildDirectory.dir("../release_key.jks"))
+      storeFile = file("../release_key.jks")
       storePassword = "release_temp"
       keyAlias = "release_temp"
       keyPassword = "release_temp"
     }
     getByName("debug") {
-      storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
+      storeFile = file("../testkey.keystore")
       storePassword = "testkey"
       keyAlias = "testkey"
       keyPassword = "testkey"
@@ -79,7 +70,7 @@ android {
   }
 
   buildTypes {
-    getByName("release"){
+    getByName("release") {
       isMinifyEnabled = false
       isShrinkResources = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -119,7 +110,7 @@ dependencies {
 
   coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
 
-  //termux
+  // termux
   implementation("com.github.termux.termux-app:terminal-view:0.118.1")
   implementation("com.github.termux.termux-app:terminal-emulator:0.118.1")
 
@@ -127,6 +118,5 @@ dependencies {
   implementation(project(":maskable"))
   implementation(project(":fastui"))
   implementation(project(":filetree"))
-  implementation(project(":java-compiler"))
   implementation(project(":java-compiler"))
 }
