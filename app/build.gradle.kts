@@ -26,9 +26,41 @@ android {
     isCoreLibraryDesugaringEnabled = true
   }
 
+  flavorDimensions.add("cpuArch")
+  productFlavors {
+    create("arch_arm32") {
+      dimension = "cpuArch"
+      versionCode = 4 * 1000 + 1
+      versionNameSuffix = "-arm32"
+    }
+    create("arch_arm64") {
+      dimension = "cpuArch"
+      versionCode = 3 * 1000 + 1
+      versionNameSuffix = "-arm64"
+    }
+  }
+
   buildFeatures {
     viewBinding = true
     buildConfig= true
+  }
+
+  sourceSets {
+    val arch_arm64 by creating {
+      assets.srcDirs("arch_arm64/assets")
+    }
+    val arch_arm32 by creating {
+      assets.srcDirs("arch_arm32/assets")
+    }
+  }
+
+  splits {
+    abi {
+      isEnable = true
+      reset()
+      include("arm64-v8a", "armeabi-v7a")
+      universalApk = false
+    }
   }
 
   signingConfigs {

@@ -94,7 +94,9 @@ public class TerminalActivity extends BaseActivity {
     String shell = "/system/bin/sh";
 
     // args for the shell
-    String[] args = new String[] {};
+    String[] args = new String[] {
+      // todo, add proot
+    };
 
     return new TerminalSession(
         shell,
