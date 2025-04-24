@@ -64,8 +64,11 @@ jobs:
           name: app-arm32
           path: app/build/outputs/apk/release/app-armeabi-v7a-release.apk
           
+      - name: List outputs
+        run: ls app/build/outputs/apk/release
+
   send_release_apk:
-    name: Send Release APK (arm64-v8a)
+    name: Send Release APK (arm64-v8a+armeabi-v7a)
     runs-on: ubuntu-latest
     needs: build_release_apk
     
