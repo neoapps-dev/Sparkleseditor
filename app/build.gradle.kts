@@ -57,13 +57,13 @@ android {
 
   signingConfigs {
     create("release") {
-      storeFile = file("../release_key.jks")
+      storeFile = file("release_key.jks")
       storePassword = "release_temp"
       keyAlias = "release_temp"
       keyPassword = "release_temp"
     }
     getByName("debug") {
-      storeFile = file("../testkey.keystore")
+      storeFile = file("testkey.keystore")
       storePassword = "testkey"
       keyAlias = "testkey"
       keyPassword = "testkey"
