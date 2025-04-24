@@ -42,17 +42,12 @@ android {
   }
 
   sourceSets {
-    main {
-      java.srcDir("src/main/java")
-      res.srcDir("src/main/res")
-    }
-
     arch_arm32 {
-      asset.srcDir("arch_arm32/assets")
+      assets.srcDir("arch_arm32/assets")
     }
 
     arch_arm64 {
-      asset.srcDir("arch_arm64/assets")
+      assets.srcDir("arch_arm64/assets")
     }
   }
 
