@@ -65,7 +65,7 @@ jobs:
           path: app/build/outputs/apk/release/app-armeabi-v7a-release.apk
           
       - name: List outputs
-        run: tree app/build/
+        run: tree app/build/outputs
 
   send_release_apk:
     name: Send Release APK (arm64-v8a+armeabi-v7a)
