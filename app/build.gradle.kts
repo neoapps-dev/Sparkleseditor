@@ -43,18 +43,16 @@ android {
 
   sourceSets {
     main {
-      java.srcDirs("src/main/java")
-      res.srcDirs("src/main/res")
-      manifest.srcFile("src/main/AndroidManifest.xml")
-      assets.srcDirs("src/main/assets")
+      java.srcDir("src/main/java")
+      res.srcDir("src/main/res")
     }
 
     arch_arm32 {
-      asset.srcDirs("arch_arm32/assets")
+      asset.srcDir("arch_arm32/assets")
     }
-    
+
     arch_arm64 {
-      asset.srcDirs("arch_arm64/assets")
+      asset.srcDir("arch_arm64/assets")
     }
   }
 
