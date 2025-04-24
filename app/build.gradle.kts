@@ -42,11 +42,11 @@ android {
   }
 
   sourceSets {
-    arch_arm32 {
+    getByName("arch_arm32") {
       assets.srcDir("arch_arm32/assets")
     }
 
-    arch_arm64 {
+    getByName("arch_arm64") {
       assets.srcDir("arch_arm64/assets")
     }
   }
