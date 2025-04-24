@@ -17,9 +17,10 @@ with Supporting full languages & Material Design 3</p>
 ## Features &amp; Todo
 - [ ] Good Code Editor Customizations
 - [ ] Python Support
+- [ ] Proot (50%)
 - [x] Java Support
 - [x] Markdown Support
-- [ ] Web support ( HTML JavaScript CSS)
+- [x] Web support ( HTML JavaScript CSS)
 - [x] Terminal Activity
 - [x] File Tree
 - [x] Great UI
