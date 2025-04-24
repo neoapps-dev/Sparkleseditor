@@ -56,13 +56,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-arm64
-          path: app/build/outputs/apk/release/app-arm64-v8a-release.apk
+          path: app/build/outputs/apk/arch_arm64/release/app-arch_arm64-arm64-v8a-release.apk
 
       - name: Upload release apk (armeabi-v7a)
         uses: actions/upload-artifact@v4
         with:
           name: app-arm32
-          path: app/build/outputs/apk/release/app-armeabi-v7a-release.apk
+          path: app/build/outputs/apk/arch_arm32/release/app-arch_arm32-armeabi-v7a-release.apk
           
       - name: List outputs
         run: tree app/build/outputs
